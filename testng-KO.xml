@@ -1,0 +1,133 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Smoke" >
+    <test name="scenarios.SmokeTest">
+        <classes>
+            <class name="scenarios.SmokeWithReport2Test">
+                <methods>
+                    <include name="newCompanyCreationAndCheckTest"/>
+                    <include name="cBCreationAndCheckTest"/>
+                    <include name="changeCBNameTest"/>
+                    <include name="addTemplatesTest"/>
+                    <include name="createUserTest"/>
+                    <include name="createUserForKOAddingTest"/>
+                    <include name="addMainUserInTestCB"/>
+                    <include name="addChairmanInTestCB"/>
+                    <include name="checkVetoRightInEmployeeCardTest"/>
+                    <include name="checkVetoRightWarningTest"/>
+
+                    <include name="finishAddingChairmanInCBTest"/>
+<!--                    тут должно добавление через ко-->
+                    <include name="addMemberFromKOTabTest"/>
+                    <include name="setChairmanRoleFromKOTabTest"/>
+                    <include name="checkVetoRightTest"/>
+                    <include name="submitChangesForExoBTest"/>
+
+
+                    <include name="createOrganizationTypeTest"/>
+
+                    <include name="sendToApproveTest"/>
+                    <include name="approveMeetingTest"/>
+                    <include name="withdrawMeetingTest"/>
+                    <include name="deleteMeetingTest"/>
+
+                    <include name="createMeetingInThePastTest"/>
+                    <include name="checkMeetingInThePast"/>
+
+                    <include name="creationQuestionFromMainPageAndAddSpeakerTest"/>
+                    <include name="addMaterialsInQuestionFromMainPageTest" />
+                    <include name="addQuestion"/>
+                    <include name="isSpeakerAddedAndConvertedTest"/>
+                    <include name="isMaterialsAddedAndConvertedTest"/>
+                    <include name="addTwoSubQuestion"/>
+
+                    <include name="createOrganizationalQuestionTest"/>
+
+                    <include name="createMeetingTest"/>
+                    <include name="addCreatedQuestionInCreatedMeetingTest" />
+                    <include name="creationNewQuestionWithMaterialsAndSpeakerTest"/>
+                    <include name="addMaterialsInNewQuestionTest"/>
+                    <include name="submitNewQuestionCreationAndCheckTest"/>
+
+                    <include name="addNewQuestionForDeleteTest"/>
+                    <include name="getInLastAddedQuestionTest"/>
+                    <include name="deleteSubQuestionFromMeetingTest"/>
+                    <include name="deleteQuestionFromMeetingTest"/>
+                    <include name="checkDeletedQuestionsTest"/>
+                    <include name="deleteQuestionFromAppTest"/>
+
+                    <include name="createAgendaTest"/>
+                    <include name="copyQuestionTest"/>
+                    <include name="submitQuestionCopyTest"/>
+                    <include name="checkDocumentsInCopiedQuestionTest"/>
+
+                    <include name="isSpeakerAddedInNewQuestionTest"/>
+                    <include name="isMaterialsAddedAndConvertedInNewQuestionTest"/>
+
+
+
+                    <include name="deleteMaterialFromNewQuestionTest"/>
+                    <include name="changeVersionOfDocumentTest"/>
+                    <include name="addAndDeleteParticipantsTest"/>
+                    <include name="vetoRightInMeetingTest"/>
+                    <include name="checkAgendaTest"/>
+                    <include name="recommendationsTest"/>
+
+                    <include name="approveMeetingAndCheckTest"/>
+                    <include name="openCollegialAndCheckVoteDisabled"/>
+                    <include name="checkRecommendationDisabledTest"/>
+
+                    <include name="changeTimeInApprovedMeetingTest"/>
+                    <include name="delegateVoteInFirstQuestionTest"/>
+                    <include name="checkMeetingStatusTest"/>
+                    <include name="enableRecommendationsForUserTest"/>
+
+                    <include name="skypeLinkTest"/>
+
+                    <include name="checkSpeakerInCollegialTest"/>
+
+                    <include name="checkOrganizationalQuestionInAgendaTest"/>
+
+                    <include name="voteOnTheFirstQuestionTest"/>
+                    <include name="checkRecommendationsInFirstQuestionCollegialTest"/>
+                    <include name="voteOnTheFirstSubQuestionTest"/>
+                    <include name="voteOnTheSecondSubQuestionTest"/>
+                    <include name="voteOnTheSecondQuestionTest"/>
+                    <include name="checkRecommendationsInSecondQuestionCollegialTest"/>
+
+                    <include name="checkOlPmAlertTest"/>
+                    <include name="checkSpeakerInSecondQuestionTest"/>
+
+                    <include name="checkVoteResultsTest"/>
+                    <include name="checkSpecialOpinionInVoteResultsTest"/>
+                    <include name="changeProjectDecisionAndDropVoteTest"/>
+                    <include name="createPMTest"/>
+
+                    <include name="createAndCheckExtractTest"/>
+                    <include name="openKSAndFinishMeetingTest"/>
+                    <include name="checkMeetingFinishedInCollegialTest"/>
+
+                    <include name="checkResultsInPastMeetingTest"/>
+                    <include name="checkVotePossibilityTest"/>
+
+                    <include name="checkVoteResultsInKSTest"/>
+                    <include name="checkSpecialOpinionTest"/>
+                    <include name="createProtocolTest"/>
+                    <include name="pmDisplayedTest"/>
+
+                    <include name="createUnitedDocumentsPackageTest"/>
+                    <include name="tradeSecretTest"/>
+                    <include name="membersPresenceTest"/>
+                    
+                    <include name="decisionTest"/>
+                    <include name="deleteDecisionTest"/>
+                    <include name="delegationInEndedMeetingTest"/>
+                    <include name="checkVotesAfterDelegationTest"/>
+                    <include name="disableRecommendationsTest"/>
+                    <include name="deleteCreatedUser"/>
+                    <include name="deleteCreatedUserFromKO"/>
+                    <include name="deleteDivision"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

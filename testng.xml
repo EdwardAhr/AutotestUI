@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Smoke" >
+    <test name="scenarios.SmokeTest">
+        <classes>
+            <class name="scenarios.SmokeWithReport2Test">
+                <methods>
+                    <include name="deleteCreatedUser"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

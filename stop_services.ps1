@@ -1,0 +1,16 @@
+[CmdletBinding()]
+
+Param(
+    [Parameter(Mandatory=$True)][string]$SiteName,
+    [Parameter(Mandatory=$True)][string]$PoolName
+)
+
+$esc="$([char]27)"; $TXT_GREEN="$esc[32m"; $TXT_YELLOW="$esc[33m";  $TXT_CLEAR="$esc[0m"
+
+Import-Module WebAdministration
+$ErrorActionPreference = "Stop";
+
+Write-Host $TXT_YELLOW"Stopping website '$SiteName' and pool '$PoolName'"$TXT_CLEAR
+Stop-WebAppPool -Name $PoolName
+Stop-Website -Name $SiteName
+Write-Host $TXT_GREEN"Stopped website '$SiteName' and pool '$PoolName'"$TXT_CLEAR

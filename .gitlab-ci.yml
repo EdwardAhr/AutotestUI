@@ -1,0 +1,340 @@
+# image: maven:latest
+# image: rvancea/maven-chrome-jdk8:latest
+# image: java:latest
+
+# variables:
+#   MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
+
+# cache:
+#   paths:
+#     - .m2/repository/
+#     - target/
+
+stages:
+  - test
+  - allure
+
+before_script: 
+    - powershell .\DevOps\test_site.ps1
+
+test:
+  stage: test
+  tags: [ areopad ]
+  when: manual
+  script:
+    - powershell .\test_run.ps1 -test
+  artifacts:
+    paths: 
+      - allure-report/
+      - allure-results/
+    expire_in: 30 days
+
+chtpz:
+  stage: test
+  tags: [ areopad ]
+  when: manual
+  script:
+    - powershell .\test_run.ps1 -chtpz
+  artifacts:
+    paths: 
+      - allure-report/
+      - allure-results/
+    expire_in: 30 days
+
+rimera:
+  stage: test
+  tags: [ areopad ]
+  when: manual
+  script:
+    - powershell .\test_run.ps1 -rimera
+  artifacts:
+    paths: 
+      - allure-report/
+      - allure-results/
+    expire_in: 30 days
+
+suek:
+  stage: test
+  tags: [ areopad ]
+  when: manual
+  script:
+    - powershell .\test_run.ps1 -suek
+  artifacts:
+    paths: 
+      - allure-report/
+      - allure-results/
+    expire_in: 30 days
+
+rshb:
+  stage: test
+  tags: [ areopad ]
+  when: manual
+  script:
+    - powershell .\test_run.ps1 -rshb
+  artifacts:
+    paths: 
+      - allure-report/
+      - allure-results/
+    expire_in: 30 days
+
+mmk:
+  stage: test
+  tags: [ areopad ]
+  when: manual
+  script:
+    - powershell .\test_run.ps1 -mmk
+  artifacts:
+    paths: 
+      - allure-report/
+      - allure-results/
+    expire_in: 30 days
+
+alrosa:
+  stage: test
+  tags: [ areopad ]
+  when: manual
+  script:
+    - powershell .\test_run.ps1 -alrosa
+  artifacts:
+    paths: 
+      - allure-report/
+      - allure-results/
+    expire_in: 30 days
+
+nspk:
+  stage: test
+  tags: [ areopad ]
+  when: manual
+  script:
+    - powershell .\test_run.ps1 -nspk
+  artifacts:
+    paths: 
+      - allure-report/
+      - allure-results/
+    expire_in: 30 days
+
+rtk:
+  stage: test
+  tags: [ areopad ]
+  when: manual
+  script:
+    - powershell .\test_run.ps1 -rtk
+  artifacts:
+    paths: 
+      - allure-report/
+      - allure-results/
+    expire_in: 30 days
+
+dkudzo:
+  stage: test
+  tags: [ areopad ]
+  when: manual
+  script:
+    - powershell .\test_run.ps1 -dkudzo
+  artifacts:
+    paths: 
+      - allure-report/
+      - allure-results/
+    expire_in: 30 days
+
+avtodor:
+  stage: test
+  tags: [ areopad ]
+  when: manual
+  script:
+    - powershell .\test_run.ps1 -avtodor
+  artifacts:
+    paths: 
+      - allure-report/
+      - allure-results/
+    expire_in: 30 days
+
+ricoh:
+  stage: test
+  tags: [ areopad ]
+  when: manual
+  script:
+    - powershell .\test_run.ps1 -ricoh
+  artifacts:
+    paths:
+      - allure-report/
+      - allure-results/
+    expire_in: 30 days
+
+expobank:
+  stage: test
+  tags: [ areopad ]
+  when: manual
+  script:
+    - powershell .\test_run.ps1 -expobank
+  artifacts:
+    paths: 
+      - allure-report/
+      - allure-results/
+    expire_in: 30 days
+
+beeline:
+  stage: test
+  tags: [ areopad ]
+  when: manual
+  script:
+    - powershell .\test_run.ps1 -beeline
+  artifacts:
+    paths: 
+      - allure-report/
+      - allure-results/
+    expire_in: 30 days
+
+allure-test:
+  stage: allure
+  tags: [ allure ]
+  when: manual
+  before_script: []
+  script:
+    - powershell .\DevOps\deploy.ps1 -Environment "test"
+    - echo http://testautomation.vdrsk.digdes.com:9000/
+  dependencies:
+    - test
+
+allure-chtpz:
+  stage: allure
+  tags: [ allure ]
+  when: manual
+  before_script: []
+  script:
+    - powershell .\DevOps\deploy.ps1 -Environment "chtpz"
+    - echo http://testautomation.vdrsk.digdes.com:9001/
+  dependencies:
+    - chtpz
+
+allure-rimera:
+  stage: allure
+  tags: [ allure ]
+  when: manual
+  before_script: []
+  script:
+    - powershell .\DevOps\deploy.ps1 -Environment "rimera"
+    - echo http://testautomation.vdrsk.digdes.com:9002/
+  dependencies:
+    - rimera
+
+allure-suek:
+  stage: allure
+  tags: [ allure ]
+  when: manual
+  before_script: []
+  script:
+    - powershell .\DevOps\deploy.ps1 -Environment "suek"
+    - echo http://testautomation.vdrsk.digdes.com:9003/
+  dependencies:
+    - suek
+
+allure-rshb:
+  stage: allure
+  tags: [ allure ]
+  when: manual
+  before_script: []
+  script:
+    - powershell .\DevOps\deploy.ps1 -Environment "rshb"
+    - echo http://testautomation.vdrsk.digdes.com:9004/
+  dependencies:
+    - rshb
+
+allure-mmk:
+  stage: allure
+  tags: [ allure ]
+  when: manual
+  before_script: []
+  script:
+    - powershell .\DevOps\deploy.ps1 -Environment "mmk"
+    - echo http://testautomation.vdrsk.digdes.com:9005/
+  dependencies:
+    - mmk
+
+allure-alrosa:
+  stage: allure
+  tags: [ allure ]
+  when: manual
+  before_script: []
+  script:
+    - powershell .\DevOps\deploy.ps1 -Environment "alrosa"
+    - echo http://testautomation.vdrsk.digdes.com:9006/
+  dependencies:
+    - alrosa
+
+allure-nspk:
+  stage: allure
+  tags: [ allure ]
+  when: manual
+  before_script: []
+  script:
+    - powershell .\DevOps\deploy.ps1 -Environment "nspk"
+    - echo http://testautomation.vdrsk.digdes.com:9007/
+  dependencies:
+    - nspk
+
+allure-rtk:
+  stage: allure
+  tags: [ allure ]
+  when: manual
+  before_script: []
+  script:
+    - powershell .\DevOps\deploy.ps1 -Environment "rtk"
+    - echo http://testautomation.vdrsk.digdes.com:9008/
+  dependencies:
+    - rtk
+
+allure-dkudzo:
+  stage: allure
+  tags: [ allure ]
+  when: manual
+  before_script: []
+  script:
+    - powershell .\DevOps\deploy.ps1 -Environment "dkudzo"
+    - echo http://testautomation.vdrsk.digdes.com:9009/
+  dependencies:
+    - dkudzo
+
+allure-avtodor:
+  stage: allure
+  tags: [ allure ]
+  when: manual
+  before_script: []
+  script:
+    - powershell .\DevOps\deploy.ps1 -Environment "avtodor"
+    - echo http://testautomation.vdrsk.digdes.com:9010/
+  dependencies:
+    - avtodor
+
+allure-ricoh:
+  stage: allure
+  tags: [ allure ]
+  when: manual
+  before_script: []
+  script:
+    - powershell .\DevOps\deploy.ps1 -Environment "ricoh"
+    - echo http://testautomation.vdrsk.digdes.com:9011/
+  dependencies:
+    - ricoh
+
+allure-expobank:
+  stage: allure
+  tags: [ allure ]
+  when: manual
+  before_script: []
+  script:
+    - powershell .\DevOps\deploy.ps1 -Environment "expobank"
+    - echo http://testautomation.vdrsk.digdes.com:9012/
+  dependencies:
+    - expobank
+
+allure-beeline:
+  stage: allure
+  tags: [ allure ]
+  when: manual
+  before_script: []
+  script:
+    - powershell .\DevOps\deploy.ps1 -Environment "beeline"
+    - echo http://testautomation.vdrsk.digdes.com:9013/
+  dependencies:
+    - beeline
